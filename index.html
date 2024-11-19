@@ -9,47 +9,7 @@
 </head>
 <body>
   <div id="container">
-    <img id="image" src="images/logotran.png" width="200px" height="200px" alt="tran.club"><br>
-     <h1>Status: <span id="status" class="loading">Checking...</span></h1>
-    <script>
-        // Function to check the website status
-        function checkWebsiteStatus() {
-            const statusElement = document.getElementById("status");
-
-            // Set the status to 'loading' while checking
-            statusElement.textContent = "Checking...";
-            statusElement.classList.remove("online", "offline", "loading");
-            statusElement.classList.add("loading");
-
-            fetch('https://plex.tran.club', {
-                method: 'HEAD', // Use HEAD to get just the headers (faster)
-                mode: 'no-cors' // Prevents CORS issues (will not provide response data, but works for status)
-            })
-            .then(response => {
-                if (response.ok) {
-                    statusElement.textContent = "Online";
-                    statusElement.classList.remove("loading", "offline");
-                    statusElement.classList.add("online");
-                } else {
-                    statusElement.textContent = "Offline";
-                    statusElement.classList.remove("loading", "online");
-                    statusElement.classList.add("offline");
-                }
-            })
-            .catch(error => {
-                // If there's an error (like network failure), set status to offline
-                statusElement.textContent = "Offline";
-                statusElement.classList.remove("loading", "online");
-                statusElement.classList.add("offline");
-            });
-        }
-
-        // Initial check when the page loads
-        checkWebsiteStatus();
-
-        // Set an interval to check the website every 15 minutes (900,000 milliseconds)
-        setInterval(checkWebsiteStatus, 900000);
-    </script>
+    <img id="image" src="images/logotran.png" width="200px" height="200px" alt="tran.club">
   </div>
   <script src="scripts/script.js"></script>
 </body>
