@@ -21,3 +21,13 @@ html, body {
   max-height: 100%;
   object-fit: contain;
 }
+#status {
+  font-size: 24px;
+  margin-top: 20px;
+}
+.online {
+  olor: green;
+}
+.offline {
+  color: red;
+}
