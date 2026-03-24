@@ -41,7 +41,7 @@ body {
   gap: 25px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 40px; /* small safety buffer */
+  margin-top: 20px; /* small safety buffer */
 }
 
 /* Each service */
