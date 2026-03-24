@@ -11,30 +11,24 @@ html, body {
 
 #container {
   display: flex;
+  flex-direction: column;   /* stack items vertically */
+  align-items: center;      /* center horizontally */
   justify-content: center;
-  align-items: center;
-  height: 100%;
+  min-height: 100vh;        /* center on screen */
 }
 
 #image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  max-width: 200px;
+  height: auto;
 }
 
 #services {
-  margin-top: 20px;
+  margin-top: 20px;         /* space BELOW logo */
   display: flex;
-  justify-content: center;
   gap: 20px;
 }
 
 .service-icon {
   width: 50px;
   height: 50px;
-  transition: transform 0.2s ease;
-}
-
-.service-icon:hover {
-  transform: scale(1.1);
 }
