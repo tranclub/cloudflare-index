@@ -7,25 +7,32 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* Center using a wrapper approach (more stable) */
+/* Center layout */
 body {
   display: grid;
-  place-items: center; /* perfect centering without flex issues */
+  place-items: center;
 }
 
 /* Container */
 #container {
   display: flex;
-  flex-direction: column;   /* stack vertically */
+  flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 25px; /* slightly tighter and consistent */
+}
+
+/* FIX: make anchor behave properly */
+#container > a {
+  display: block;
+  line-height: 0; /* removes inline spacing issues */
 }
 
 /* Logo */
 #image {
   width: 180px;
   height: auto;
-  display: block; /* prevents inline weirdness */
+  display: block;
+  margin-bottom: 10px; /* ensures clean separation */
 }
 
 /* Services row */
@@ -34,6 +41,7 @@ body {
   gap: 25px;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 5px; /* small safety buffer */
 }
 
 /* Each service */
@@ -54,12 +62,12 @@ body {
   padding: 10px;
   border-radius: 14px;
   background: #111;
+  transition: transform 0.2s ease;
 }
 
 /* Hover */
 .service:hover .service-icon {
   transform: scale(1.1);
-  transition: 0.2s ease;
 }
 
 /* Mobile */
