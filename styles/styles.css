@@ -1,4 +1,4 @@
-/* Reset + base */
+/* Reset */
 html, body {
   margin: 0;
   padding: 0;
@@ -7,42 +7,36 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* Center everything on screen */
+/* Center using a wrapper approach (more stable) */
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  display: grid;
+  place-items: center; /* perfect centering without flex issues */
 }
 
-/* Main container (vertical layout) */
+/* Container */
 #container {
   display: flex;
-  flex-direction: column;   /* stack logo + icons */
+  flex-direction: column;   /* stack vertically */
   align-items: center;
-  gap: 30px;               /* spacing between logo and icons */
+  gap: 30px;
 }
 
-/* Logo (FIXED SIZE — prevents fullscreen issue) */
+/* Logo */
 #image {
   width: 180px;
   height: auto;
-  transition: transform 0.3s ease;
-}
-
-#image:hover {
-  transform: scale(1.05);
+  display: block; /* prevents inline weirdness */
 }
 
 /* Services row */
 #services {
   display: flex;
-  justify-content: center;
   gap: 25px;
-  flex-wrap: wrap; /* allows wrapping on small screens */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Each service (icon + label) */
+/* Each service */
 .service {
   display: flex;
   flex-direction: column;
@@ -51,8 +45,6 @@ body {
   color: white;
   font-size: 14px;
   gap: 8px;
-  opacity: 0.85;
-  transition: all 0.2s ease;
 }
 
 /* Icons */
@@ -62,21 +54,15 @@ body {
   padding: 10px;
   border-radius: 14px;
   background: #111;
-  transition: all 0.25s ease;
 }
 
-/* Hover effects */
-.service:hover {
-  opacity: 1;
-  transform: translateY(-3px);
-}
-
+/* Hover */
 .service:hover .service-icon {
   transform: scale(1.1);
-  background: #1a1a1a;
+  transition: 0.2s ease;
 }
 
-/* Mobile tweaks */
+/* Mobile */
 @media (max-width: 480px) {
   #image {
     width: 140px;
