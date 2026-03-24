@@ -1,34 +1,88 @@
-/* Full viewport height and width */
+/* Reset */
 html, body {
-  background-color: black;
   margin: 0;
   padding: 0;
   height: 100%;
+  background: black;
+  font-family: Arial, sans-serif;
+}
+
+/* Center everything perfectly */
+body {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Main container */
 #container {
   display: flex;
-  flex-direction: column;   /* stack items vertically */
-  align-items: center;      /* center horizontally */
-  justify-content: center;
-  min-height: 100vh;        /* center on screen */
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
+/* Logo */
 #image {
-  max-width: 200px;
+  width: 180px;
   height: auto;
+  transition: transform 0.3s ease;
 }
 
+#image:hover {
+  transform: scale(1.05);
+}
+
+/* Services row */
 #services {
-  margin-top: 20px;         /* space BELOW logo */
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* Each service (icon + label) */
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  gap: 8px;
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+/* Icon styling */
 .service-icon {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  background: #111;
+  padding: 10px;
+  transition: all 0.25s ease;
+}
+
+/* Hover effects */
+.service:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.service:hover .service-icon {
+  transform: scale(1.1);
+  background: #1a1a1a;
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  #image {
+    width: 140px;
+  }
+
+  .service-icon {
+    width: 50px;
+    height: 50px;
+  }
 }
